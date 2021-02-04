@@ -15,6 +15,7 @@ private WebDriver driver = null;
 
 	public void openGooglesPage() {
 		driver.get("https://www.google.com/");
+// 		driver.navigate().to("https://www.google.com");
 	}
 	public void setSearchField(String text) {
 		driver.findElement(searchBox).click();
