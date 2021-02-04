@@ -1,0 +1,6 @@
+2021-02-04 16:26:48,334  INFO [main] CucumberJava_Demo:35 - ********* starting Chrome *************
+2021-02-04 16:26:52,624  INFO [main] CucumberJava_Demo:56 - ********* Open Google *************
+2021-02-04 16:26:54,874  INFO [main] CucumberJava_Demo:63 - ********* Enter The Item to Search  *************
+2021-02-04 16:26:56,430  INFO [main] CucumberJava_Demo:70 - ********* Click Search Button *************
+2021-02-04 16:26:56,444  INFO [main] CucumberJava_Demo:77 - ********* Get Search Results Page Title *************
+2021-02-04 16:26:56,447  INFO [main] CucumberJava_Demo:84 - ********* Close Chrome *************

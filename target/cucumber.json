@@ -1,0 +1,114 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-02-04T21:26:48.228Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1967000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.sampleSteps.setup()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Search in Google for a Specific Data",
+        "description": "",
+        "id": "google-search-engine;search-in-google-for-a-specific-data",
+        "after": [
+          {
+            "result": {
+              "duration": 628000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.sampleSteps.close_the_browser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2361000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User  launch google browser",
+            "match": {
+              "location": "stepDefinitions.sampleSteps.user_launch_google_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2246000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User  enters \"laptop\" in searchbox",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"laptop\"",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.sampleSteps.user_enters_in_searchbox(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1548000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User  clicks on SearchButton",
+            "match": {
+              "location": "stepDefinitions.sampleSteps.user_clicks_on_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Search results page Title should contain \"Google Search\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Google Search\"",
+                  "offset": 41
+                }
+              ],
+              "location": "stepDefinitions.sampleSteps.search_results_page_title_should_contain(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression"
+          },
+          {
+            "name": "@Smoke"
+          }
+        ]
+      }
+    ],
+    "name": "Google Search Engine",
+    "description": "",
+    "id": "google-search-engine",
+    "keyword": "Feature",
+    "uri": "file:Features/sample.feature",
+    "tags": []
+  }
+]
