@@ -13,7 +13,6 @@ import pageObjects.GoogleSearchPage;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.Level;
 
 public class sampleSteps {
@@ -25,25 +24,26 @@ public class sampleSteps {
 
 	@Before
 	public void setup() {
- 		logger=Logger.getLogger("CucumberJava_Demo");
-//  		PropertyConfigurator.configure("Log4j.properties");
+ 		logger=Logger.getLogger(this.getClass());
 		BasicConfigurator.configure();
- 		logger.setLevel(Level.INFO);
-		
+ 		logger.setLevel(Level.INFO);		
 		logger.info("********* starting Chrome *************");
 	
- 		WebDriverManager.chromedriver().setup();	
-		ChromeOptions opt = new ChromeOptions();
-		opt.setHeadless(true);	
-        
+ 		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--headless");
+		        
 //        try {
-//          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), opt);
+//          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
 
 		
- 		driver = new ChromeDriver(opt);
+ 		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
