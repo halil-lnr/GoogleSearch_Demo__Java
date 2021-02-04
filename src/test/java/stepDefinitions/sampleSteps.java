@@ -1,20 +1,17 @@
 package stepDefinitions;
 
 import java.util.concurrent.TimeUnit;
-// import org.apache.log4j.Level;
-// import org.apache.log4j.Logger;
-// import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.GoogleSearchPage;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.Level;
@@ -29,7 +26,8 @@ public class sampleSteps {
 	@Before
 	public void setup() {
  		logger=Logger.getLogger("CucumberJava_Demo");
- 		PropertyConfigurator.configure("Log4j.properties");
+//  		PropertyConfigurator.configure("Log4j.properties");
+		BasicConfigurator.configure();
  		logger.setLevel(Level.INFO);
 		
 		logger.info("********* starting Chrome *************");
