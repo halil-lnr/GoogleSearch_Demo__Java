@@ -43,3 +43,10 @@ jobs:
         name: Automation-test-reports
         path: 
           target/
+
+    - name: Security Check Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: security-check-report
+        path: 
+          security_checks_log.txt
