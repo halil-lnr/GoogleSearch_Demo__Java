@@ -34,20 +34,11 @@ jobs:
     - name: Build with Maven
       run: mvn test -q --file pom.xml
       
-    - name: Archive Test Results-index.html
+    - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
-        name: HTML-reports
-        path: target/cucumber-reports/*.*
-        
-    - name: Archive Test Results-Automation.log
-      uses: actions/upload-artifact@v2
-      with:
-        name: Log files
-        path: target/Logs/*.log
-  
-    - name: Archive Test Results-Cucumber.json
-      uses: actions/upload-artifact@v2
-      with:
-        name: Json report
-        path: target/*.json
+        name: Automation-test-reports
+        path: 
+          target/cucumber-reports/*.*
+          target/Logs/*.log
+          target/*.json
