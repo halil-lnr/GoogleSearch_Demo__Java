@@ -29,7 +29,7 @@ jobs:
     - name: Install Google Chrome Using Shell Script
       run: |
        chmod +x ./myScripts/InstallChrome.sh
-        ./scripts/InstallChrome.sh    
+        ./myScripts/InstallChrome.sh    
         
     - name: Build with Maven
       run: mvn test -q --file pom.xml
