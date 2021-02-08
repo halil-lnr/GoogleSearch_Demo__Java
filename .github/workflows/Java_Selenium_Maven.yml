@@ -39,6 +39,4 @@ jobs:
       with:
         name: Automation-test-reports
         path: 
-          target/cucumber-reports/*.*
-          target/Logs/*.log
-          target/*.json
+          target/
