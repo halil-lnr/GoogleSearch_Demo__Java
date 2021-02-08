@@ -26,7 +26,7 @@ jobs:
     - name: Install Chrome    
       run: |
         sudo apt install google-chrome-stable
-#     - name: Install Google Chrome Using Shell Script
+#     - name: Install Google Chrome Using Shell  Script 
 #       run: |
 #        chmod +x ./myScripts/InstallChrome.sh
 #         ./myScripts/InstallChrome.sh    
