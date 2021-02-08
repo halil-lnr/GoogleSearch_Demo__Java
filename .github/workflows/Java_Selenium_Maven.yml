@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: HTML-reports
-        path: target/cucumber-reports/*.html
+        path: target/cucumber-reports/*.*
         
     - name: Archive Test Results-Automation.log
       uses: actions/upload-artifact@v2
