@@ -46,4 +46,4 @@ jobs:
       with:
         name: Automation-Logs
         path: 
-          Logs/*.log
+          Logs/
