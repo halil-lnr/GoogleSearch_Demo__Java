@@ -16,4 +16,4 @@ fi
 cat target/security_checks_log.txt
 
 # Delete security check log file
-rm target/security_checks_log.txt
+# rm target/security_checks_log.txt
