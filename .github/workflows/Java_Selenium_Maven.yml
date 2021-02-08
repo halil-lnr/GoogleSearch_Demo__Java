@@ -40,3 +40,10 @@ jobs:
         name: Automation-test-reports
         path: 
           target/
+
+    - name: Archive Test Logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: Automation-Logs
+        path: 
+          Logs/*.log
