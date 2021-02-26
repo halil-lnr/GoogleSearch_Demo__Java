@@ -31,16 +31,12 @@ public class sampleSteps {
 	
  		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--headless");
-		options.AddArguments("--incognito");
-		options.AddArguments("--start-maximized");
-                options.AddArguments("--ignore-certificate-errors");
-                options.AddArguments("--disable-popup-blocking");
-		options.addArguments("--disable-default-apps");
-		options.addArguments("test-type=browser");
-		options.addArguments("--enable-precise-memory-info");
+		options.addArguments("headless");
+		options.addArguments("disable-gpu");
+		options.addArguments("no-sandbox");
+		options.addArguments("allow-running-insecure-content");
+		options.addArguments("ignore-certificate-errors");
+		options.addArguments("window-size=1920,1080");
 		        
 //        try {
 //          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
