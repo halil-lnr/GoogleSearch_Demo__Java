@@ -37,6 +37,12 @@ public class sampleSteps {
 		options.addArguments("allow-running-insecure-content");
 		options.addArguments("ignore-certificate-errors");
 		options.addArguments("window-size=1920,1080");
+		options.addArguments("disable-dev-shm-usage"); 
+		options.addArguments("disable-browser-side-navigation");
+		options.addArguments("allow-file-access-from-files");
+		options.addArguments("--disable-plugins");
+		options.addArguments("--disable-extensions");
+		
 		        
 //        try {
 //          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
