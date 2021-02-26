@@ -52,6 +52,11 @@ public class sampleSteps {
 		googleSearch = new GoogleSearchPage(driver);
 		googleSearch.openGooglesPage();
 		logger.info("********* Open Google *************");
+		
+		
+		String title = driver.getTitle();
+		System.out.println(title);
+		logger.info("Title is   "+ title );
 
 	}
 
