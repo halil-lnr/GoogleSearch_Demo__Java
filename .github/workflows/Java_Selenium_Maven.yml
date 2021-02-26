@@ -26,27 +26,27 @@ jobs:
     - name: Install Chrome    
       run: |
         sudo apt install google-chrome-stable
-#     - name: Install Google Chrome Using Shell  Script 
-#       run: |
-#        chmod +x ./myScripts/InstallChrome.sh
-#         ./myScripts/InstallChrome.sh    
+# //#     - name: Install Google Chrome Using Shell  Script 
+# //#       run: |
+# //#        chmod +x ./myScripts/InstallChrome.sh
+# //#         ./myScripts/InstallChrome.sh    
   
-    - name: Run Security Checks
-      run: bash myScripts/security_checks.sh
+#     - name: Run Security Checks
+#       run: bash myScripts/security_checks.sh
   
     - name: Build with Maven
       run: mvn test -q --file pom.xml
       
-    - name: Archive Test Results
-      uses: actions/upload-artifact@v2
-      with:
-        name: Automation-test-reports
-        path: 
-          target/
+#     - name: Archive Test Results
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: Automation-test-reports
+#         path: 
+#           target/
 
-    - name: Security Check Results
-      uses: actions/upload-artifact@v2
-      with:
-        name: security-check-report
-        path: 
-          security_checks_log.txt
+#     - name: Security Check Results
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: security-check-report
+#         path: 
+#           security_checks_log.txt
