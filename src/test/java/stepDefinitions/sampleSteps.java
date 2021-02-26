@@ -42,6 +42,8 @@ public class sampleSteps {
 // 		options.addArguments("allow-file-access-from-files");
 // 		options.addArguments("--disable-plugins");
 // 		options.addArguments("--disable-extensions");
+		
+    chromeOptions.addArguments("headless");
     chromeOptions.addArguments("allow-file-access");
     chromeOptions.addArguments("allow-file-access-from-files");
     chromeOptions.addArguments("disable-background-networking");
