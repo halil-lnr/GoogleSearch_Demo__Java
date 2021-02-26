@@ -34,6 +34,13 @@ public class sampleSteps {
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--headless");
+		options.AddArguments("--incognito");
+		options.AddArguments("--start-maximized");
+                options.AddArguments("--ignore-certificate-errors");
+                options.AddArguments("--disable-popup-blocking");
+		options.addArguments("--disable-default-apps");
+		options.addArguments("test-type=browser");
+		options.addArguments("--enable-precise-memory-info");
 		        
 //        try {
 //          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
