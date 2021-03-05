@@ -29,8 +29,8 @@ public class sampleSteps {
  		logger.setLevel(Level.INFO);		
 		logger.info("********* starting Chrome *************");
 	
-//  		WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver", "DriverExecutables/chromedriver.exe");
+ 		WebDriverManager.chromedriver().setup();
+// 		System.setProperty("webdriver.chrome.driver", "DriverExecutables/chromedriver.exe");
 		
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
@@ -46,17 +46,17 @@ public class sampleSteps {
 // 		options.addArguments("--disable-plugins");
 // 		options.addArguments("--disable-extensions");
 
-    		chromeOptions.addArguments("headless");
-		chromeOptions.addArguments("disable-gpu");
-		chromeOptions.addArguments("no-sandbox");
-		chromeOptions.addArguments("allow-running-insecure-content");
-		chromeOptions.addArguments("ignore-certificate-errors");
-		chromeOptions.addArguments("window-size=1920,1080");
-		chromeOptions.addArguments("disable-dev-shm-usage"); 
-		chromeOptions.addArguments("disable-browser-side-navigation");
-		chromeOptions.addArguments("allow-file-access-from-files");
-		chromeOptions.addArguments("--disable-plugins");
-		chromeOptions.addArguments("--disable-extensions");	
+//     		chromeOptions.addArguments("headless");
+// 		chromeOptions.addArguments("disable-gpu");
+// 		chromeOptions.addArguments("no-sandbox");
+// 		chromeOptions.addArguments("allow-running-insecure-content");
+// 		chromeOptions.addArguments("ignore-certificate-errors");
+// 		chromeOptions.addArguments("window-size=1920,1080");
+// 		chromeOptions.addArguments("disable-dev-shm-usage"); 
+// 		chromeOptions.addArguments("disable-browser-side-navigation");
+// 		chromeOptions.addArguments("allow-file-access-from-files");
+// 		chromeOptions.addArguments("--disable-plugins");
+// 		chromeOptions.addArguments("--disable-extensions");	
 		
 
 //     chromeOptions.addArguments("allow-file-access");
