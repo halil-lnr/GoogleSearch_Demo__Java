@@ -23,13 +23,13 @@ jobs:
       with:
         java-version: 1.8
  
-    - name: Install Chrome    
-      run: |
-       sudo apt install google-chrome-stable
-#     - name: Install Google Chrome Using Shell  Script 
+#     - name: Install Chrome    
 #       run: |
-#        chmod +x ./myScripts/InstallChrome.sh
-#         ./myScripts/InstallChrome.sh    
+#        sudo apt install google-chrome-stable
+    - name: Install Google Chrome Using Shell  Script 
+      run: |
+       chmod +x ./myScripts/InstallChrome.sh
+        ./myScripts/InstallChrome.sh    
   
 #     - name: Run Security Checks
 #       run: bash myScripts/security_checks.sh
