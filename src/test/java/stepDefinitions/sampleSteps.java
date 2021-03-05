@@ -112,14 +112,14 @@ public class sampleSteps {
 		
 		
 		        
-//        try {
-//          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+       try {
+         driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
 
 		
- 		driver = new ChromeDriver(chromeOptions);
+//  		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
