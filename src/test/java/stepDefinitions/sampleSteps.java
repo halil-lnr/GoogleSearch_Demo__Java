@@ -34,9 +34,9 @@ public class sampleSteps {
 		
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
-// 		options.addArguments("headless");
-// 		options.addArguments("disable-gpu");
-// 		options.addArguments("no-sandbox");
+		options.addArguments("headless");
+		options.addArguments("disable-gpu");
+		options.addArguments("no-sandbox");
 // 		options.addArguments("allow-running-insecure-content");
 // 		options.addArguments("ignore-certificate-errors");
 // 		options.addArguments("window-size=1920,1080");
@@ -112,11 +112,11 @@ public class sampleSteps {
 		
 		
 		        
-       try {
-         driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
+//        try {
+//          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 		
  		driver = new ChromeDriver(chromeOptions);
