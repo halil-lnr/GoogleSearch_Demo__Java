@@ -34,9 +34,9 @@ public class sampleSteps {
 		
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
-		options.addArguments("headless");
-		options.addArguments("disable-gpu");
-		options.addArguments("no-sandbox");
+// 		options.addArguments("headless");
+// 		options.addArguments("disable-gpu");
+// 		options.addArguments("no-sandbox");
 // 		options.addArguments("allow-running-insecure-content");
 // 		options.addArguments("ignore-certificate-errors");
 // 		options.addArguments("window-size=1920,1080");
@@ -46,9 +46,9 @@ public class sampleSteps {
 // 		options.addArguments("--disable-plugins");
 // 		options.addArguments("--disable-extensions");
 
-//     		chromeOptions.addArguments("headless");
-// 		chromeOptions.addArguments("disable-gpu");
-// 		chromeOptions.addArguments("no-sandbox");
+    		chromeOptions.addArguments("headless");
+		chromeOptions.addArguments("disable-gpu");
+		chromeOptions.addArguments("no-sandbox");
 // 		chromeOptions.addArguments("allow-running-insecure-content");
 // 		chromeOptions.addArguments("ignore-certificate-errors");
 // 		chromeOptions.addArguments("window-size=1920,1080");
