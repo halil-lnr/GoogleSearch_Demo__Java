@@ -29,9 +29,9 @@ public class sampleSteps {
  		logger.setLevel(Level.INFO);		
 		logger.info("********* starting Chrome *************");
 	
- 		WebDriverManager.chromedriver().setup();
+//  		WebDriverManager.chromedriver().setup();
 // 		System.setProperty("webdriver.chrome.driver", "DriverExecutables/chromedriver.exe");
-		
+	        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");	
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
 // 		options.addArguments("headless");
