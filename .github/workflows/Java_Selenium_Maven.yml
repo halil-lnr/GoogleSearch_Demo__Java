@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: OKCQA_Ubuntu4x8
 #     runs-on: ubuntu-latest
 #     runs-on: macos-latest
 #     runs-on: windows-latest
