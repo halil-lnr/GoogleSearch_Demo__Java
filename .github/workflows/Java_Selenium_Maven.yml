@@ -11,8 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: OKCQA_Ubuntu4x8
-#     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 #     runs-on: macos-latest
 #     runs-on: windows-latest
       
@@ -37,12 +36,13 @@ jobs:
     - name: Build with Maven
       run: mvn test -q
       
-#     - name: Archive Test Results
-#       uses: actions/upload-artifact@v2
-#       with:
-#         name: Automation-test-reports
-#         path: 
-#           target/
+    - name: Archive Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: Automation-test-reports
+        path: 
+          target/
+          Logs/
 
 #     - name: Security Check Results
 #       uses: actions/upload-artifact@v2
