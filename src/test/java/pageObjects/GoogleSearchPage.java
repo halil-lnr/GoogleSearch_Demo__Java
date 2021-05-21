@@ -14,9 +14,9 @@ private WebDriver driver = null;
 	}
 
 	public void openGooglesPage() {
-		driver.get("http://alawdokcweb203:8880/VendorManagement.Territory.UI/#/home");
+// 		driver.get("http://alawdokcweb203:8880/VendorManagement.Territory.UI/#/home");
 
-// 		driver.get("https://www.google.com/");
+		driver.get("https://www.google.com/");
 // 		driver.navigate().to("https://www.google.com");
 	}
 	public void setSearchField(String text) {
