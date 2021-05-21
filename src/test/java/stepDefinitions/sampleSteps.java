@@ -29,88 +29,16 @@ public class sampleSteps {
  		logger.setLevel(Level.INFO);		
 		logger.info("********* starting Chrome *************");
 	
-//  		WebDriverManager.chromedriver().setup();
+ 		WebDriverManager.chromedriver().setup();
 // 		System.setProperty("webdriver.chrome.driver", "DriverExecutables/chromedriver.exe");
-	        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");	
+// 	        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");	
+		
+		os.environ['WDM_LOG_LEVEL'] = '0'
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
-// 		options.addArguments("headless");
-// 		options.addArguments("disable-gpu");
-// 		options.addArguments("no-sandbox");
-// 		options.addArguments("allow-running-insecure-content");
-// 		options.addArguments("ignore-certificate-errors");
-// 		options.addArguments("window-size=1920,1080");
-// 		options.addArguments("disable-dev-shm-usage"); 
-// 		options.addArguments("disable-browser-side-navigation");
-// 		options.addArguments("allow-file-access-from-files");
-// 		options.addArguments("--disable-plugins");
-// 		options.addArguments("--disable-extensions");
-
     		chromeOptions.addArguments("headless");
-		chromeOptions.addArguments("disable-gpu");
-		chromeOptions.addArguments("no-sandbox");
-// 		chromeOptions.addArguments("allow-running-insecure-content");
-// 		chromeOptions.addArguments("ignore-certificate-errors");
-// 		chromeOptions.addArguments("window-size=1920,1080");
-// 		chromeOptions.addArguments("disable-dev-shm-usage"); 
-// 		chromeOptions.addArguments("disable-browser-side-navigation");
-// 		chromeOptions.addArguments("allow-file-access-from-files");
-// 		chromeOptions.addArguments("--disable-plugins");
-// 		chromeOptions.addArguments("--disable-extensions");	
-		
-
-//     chromeOptions.addArguments("allow-file-access");
-//     chromeOptions.addArguments("allow-file-access-from-files");
-//     chromeOptions.addArguments("disable-background-networking");
-//     chromeOptions.addArguments("disable-background-timer-throttling");
-//     chromeOptions.addArguments("disable-breakpad");
-//     chromeOptions.addArguments("disable-child-account-detection");
-//     chromeOptions.addArguments("disable-clear-browsing-data-counters");
-//     chromeOptions.addArguments("disable-client-side-phishing-detection");
-//     chromeOptions.addArguments("disable-cloud-import");
-//     chromeOptions.addArguments("disable-component-cloud-policy");
-//     chromeOptions.addArguments("disable-component-update");
-//     chromeOptions.addArguments("disable-default-apps");
-//     chromeOptions.addArguments("disable-download-notification");
-//     chromeOptions.addArguments("disable-extensions");
-//     chromeOptions.addArguments("disable-extensions-file-access-check");
-//     chromeOptions.addArguments("disable-extensions-http-throttling");
-//     chromeOptions.addArguments("disable-hang-monitor");
-//     chromeOptions.addArguments("disable-infobars");
-//     chromeOptions.addArguments("disable-popup-blocking");
-//     chromeOptions.addArguments("disable-print-preview");
-//     chromeOptions.addArguments("disable-prompt-on-repost");
-//     chromeOptions.addArguments("disable-sync");
-//     chromeOptions.addArguments("disable-translate");
-//     chromeOptions.addArguments("disable-web-resources");
-//     chromeOptions.addArguments("disable-web-security");
-//     chromeOptions.addArguments("dns-prefetch-disable");
-//     chromeOptions.addArguments("download-whole-document");
-//     chromeOptions.addArguments("enable-logging");
-//     chromeOptions.addArguments("enable-screenshot-testing-with-mode");
-//     chromeOptions.addArguments("ignore-certificate-errors");
-//     chromeOptions.addArguments("log-level=0");
-//     chromeOptions.addArguments("metrics-recording-only");
-//     chromeOptions.addArguments("mute-audio");
-//     chromeOptions.addArguments("no-default-browser-check");
-//     chromeOptions.addArguments("no-displaying-insecure-content");
-//     chromeOptions.addArguments("no-experiments");
-//     chromeOptions.addArguments("no-first-run");
-//     chromeOptions.addArguments("no-sandbox");
-//     chromeOptions.addArguments("no-service-autorun");
-//     chromeOptions.addArguments("noerrdialogs");
-//     chromeOptions.addArguments("password-store=basic");
-//     chromeOptions.addArguments("reduce-security-for-testing");
-//     chromeOptions.addArguments("safebrowsing-disable-auto-update");
-//     chromeOptions.addArguments("safebrowsing-disable-download-protection");
-//     chromeOptions.addArguments("safebrowsing-disable-extension-blacklist");
-//     chromeOptions.addArguments("start-maximized");
-//     chromeOptions.addArguments("test-type=webdriver");
-//     chromeOptions.addArguments("use-mock-keychain");	
-		
-		
-		
-		
+		chromeOptions.addArguments("no-sandbox");		
+		chromeOptions.addArguments("disable-dev-shm-usage");
 		        
 //        try {
 //          driver = new RemoteWebDriver( new URL("http://selenium__standalone-chrome:4444/wd/hub"), options);
