@@ -33,7 +33,7 @@ public class sampleSteps {
 // 		System.setProperty("webdriver.chrome.driver", "DriverExecutables/chromedriver.exe");
 // 	        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");	
 		
-		os.environ['WDM_LOG_LEVEL'] = '0'
+		os.environ['WDM_LOG_LEVEL'] = '0';
 		
 		ChromeOptions chromeOptions = new ChromeOptions();
     		chromeOptions.addArguments("headless");
