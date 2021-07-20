@@ -23,11 +23,6 @@ private WebDriver driver = null;
 		driver.findElement(searchBox).click();
 		driver.findElement(searchBox).clear();
 		driver.findElement(searchBox).sendKeys(text);
-	  try {
-		Thread.sleep(2000);
-	} catch (Exception e) {		
-		e.printStackTrace();
-	}
 	}
 	
 	public void clickSearchButton() {
