@@ -8,6 +8,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<jacoco.version>0.8.6</jacoco.version>
 	</properties>
 
 	<dependencies>
@@ -50,7 +51,11 @@
 			<version>1.2.17</version>
 		</dependency>
 		
-
+		<dependency>
+    			<groupId>org.jacoco</groupId> 
+    			<artifactId>jacoco-maven-plugin</artifactId>
+    			<version>${jacoco.version}</version>
+		</dependency>
 		
 	</dependencies>
 
@@ -94,7 +99,7 @@
 			<plugin>
    		 		<groupId>org.jacoco</groupId>
    		 		<artifactId>jacoco-maven-plugin</artifactId>
-    		 		<version>0.8.6</version>
+    		 		<version>${jacoco.version}</version>
     		 		<executions>
         				<execution>
             				<id>jacoco-initialize</id>
