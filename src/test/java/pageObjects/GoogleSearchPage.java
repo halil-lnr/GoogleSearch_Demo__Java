@@ -25,7 +25,7 @@ private WebDriver driver = null;
 		driver.findElement(searchBox).sendKeys(text);
 	  try {
 		Thread.sleep(2000);
-	} catch (InterruptedException e) {		
+	} catch (Exception e) {		
 		e.printStackTrace();
 	}
 	}
