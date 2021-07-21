@@ -126,8 +126,7 @@
             				</goals>
         				</execution>
         				<execution>
-            				<id>jacoco-site</id>
-            				<phase>verify</phase>
+            				<id>report</id>            				
             				<goals>
                 				<goal>report</goal>
             				</goals>
