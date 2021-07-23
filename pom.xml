@@ -118,6 +118,11 @@
    		 		<groupId>org.jacoco</groupId>
    		 		<artifactId>jacoco-maven-plugin</artifactId>
     		 		<version>${jacoco.version}</version>
+				<configuration>
+                    			<formats>
+                        			<format>xml</format>
+                    			</formats>
+                		</configuration>
     		 		<executions>
         				<execution>
             				<id>jacoco-initialize</id>
