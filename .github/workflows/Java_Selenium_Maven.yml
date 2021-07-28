@@ -14,8 +14,12 @@ on:
 env:
   UNIT_TESTS_REPORT_FILENAME: "jacoco-reports-${{ github.run_id }}"
   REQUIRED_CODE_COVERAGE_PERCENT: 80
-  SONARQUBE_URL: http://sonar.default.svc.cluster.local
-  SONARQUBE_PUBLIC_URL: https://sonar.us-mvr-dev.azure.lnrsg.io
+  ONARQUBE_URL: http://vdiokcqa03wxv:9000
+  SONARQUBE_PUBLIC_URL: http://vdiokcqa03wxv:9000
+  serviceName: $(xmllint --xpath '/*[local-name()="project"]/*[local-name()="artifactId"]/text()' pom.xml)
+#   10.248.227.69 VDI3 ip
+#   SONARQUBE_URL: http://sonar.default.svc.cluster.local
+#   SONARQUBE_PUBLIC_URL: https://sonar.us-mvr-dev.azure.lnrsg.io
   
 #   SONAR_SCANNER_VERSION: 4.6.1.2450
 
@@ -56,22 +60,22 @@ jobs:
     - name: Run sonar scanner and push result to LNI's Sonarqube
       continue-on-error: true
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       run: |
           sonar-scanner -Dsonar.login="${{ secrets.SONAR_TOKEN }}" \
             -Dsonar.host.url="${{ env.SONARQUBE_URL }}" \
             -Dsonar.projectKey="${{ needs.prepare.outputs.serviceName }}" \
             -Dsonar.projectVersion="${{ needs.prepare.outputs.serviceVersion }}" \
-            -Dsonar.java.binaries=target/classes/**/* \
-            -Dsonar.coverage.exclusions="src/test/**/*" \
+            -Dsonar.java.binaries=target/test-classes/**/* \
             -Dsonar.language=java \
             -Dsonar.qualitygate.wait=true \
             -Dsonar.exclusions="*.js, src/test/bdd/**, grpc-client/**"
+ #           -Dsonar.coverage.exclusions="src/test/**/*" \
     - name: Getting sonar quality gate result for the project
       id: sonar_json_result
       shell: bash
       run: |
-          projectStatusJson=$(curl -u ${{ secrets.SONAR_TOKEN }}: "${{ env.SONARQUBE_URL }}/api/qualitygates/project_status?projectKey=${{ needs.prepare.outputs.serviceName }}")
+          projectStatusJson=$(curl -u ${{ secrets.SONAR_TOKEN }}: "${{ env.SONARQUBE_URL }}/api/qualitygates/project_status?projectKey=${{ env.serviceName }}")
           echo $projectStatusJson
           echo "::set-output name=result::$projectStatusJson"
     - name: Parsing sonarqube result
@@ -96,7 +100,7 @@ jobs:
           output: |
             {
               "summary": "Sonarqube code quality scan's result is ${{ steps.sonar_result.outputs.result }}",
-              "text_description": "For more details visit this [link](${{ env.SONARQUBE_PUBLIC_URL }}/dashboard?id=${{ needs.prepare.outputs.serviceName }})"
+              "text_description": "For more details visit this [link](${{ env.SONARQUBE_PUBLIC_URL }}/dashboard?id=${{ env.serviceName }})"
             }
 
 
