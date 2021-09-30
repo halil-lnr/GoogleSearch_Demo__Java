@@ -55,8 +55,16 @@ jobs:
         sudo apt-get install libxml2-utils
     - name: Setup sonar scanner
       uses: warchant/setup-sonar-scanner@v3
+      
+      
 
-
+    - name: Run sonar scanner and push result to LNI's Sonarqube
+      uses: romeovs/lcov-reporter-action@v0.2.16
+      with:
+        lcov-file: ./coverage/lcov.info
+        
+        
+        
 
     - name: Run sonar scanner and push result to LNI's Sonarqube
       continue-on-error: true
