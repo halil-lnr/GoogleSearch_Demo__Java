@@ -66,51 +66,51 @@ jobs:
         
         
 
-    - name: Run sonar scanner and push result to LNI's Sonarqube
-      continue-on-error: true
-      env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-      run: |
-          sonar-scanner -Dsonar.login="${{ secrets.SONAR_TOKEN }}" \
-            -Dsonar.host.url="${{ env.SONARQUBE_URL }}" \
-            -Dsonar.projectKey="${{ needs.prepare.outputs.serviceName }}" \
-            -Dsonar.projectVersion="${{ needs.prepare.outputs.serviceVersion }}" \
-            -Dsonar.java.binaries=target/test-classes/**/* \
-            -Dsonar.language=java \
-            -Dsonar.qualitygate.wait=true \
-            -Dsonar.exclusions="*.js, src/test/bdd/**, grpc-client/**"
- #           -Dsonar.coverage.exclusions="src/test/**/*" \
-    - name: Getting sonar quality gate result for the project
-      id: sonar_json_result
-      shell: bash
-      run: |
-          projectStatusJson=$(curl -u ${{ secrets.SONAR_TOKEN }}: "${{ env.SONARQUBE_URL }}/api/qualitygates/project_status?projectKey=${{ env.serviceName }}")
-          echo $projectStatusJson
-          echo "::set-output name=result::$projectStatusJson"
-    - name: Parsing sonarqube result
-      id: sonar_result
-      shell: bash
-      run: |
-          echo ${{ steps.sonar_json_result.outputs.result }}
-          echo ${{ fromJSON(steps.sonar_json_result.outputs.result) }}
-          projectStatus=${{ fromJSON(steps.sonar_json_result.outputs.result).projectStatus.status }}
-          if [[ $projectStatus =~ "ERROR" ]]; then
-            sonarResult="failure"
-          else
-            sonarResult="success"
-          fi
-          echo "::set-output name=result::$sonarResult"
-    - name: Add check action for sonarqube result
-      uses: LouisBrunner/checks-action@v1.1.1
-      with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: "[sonarqube] Code quality result"
-          conclusion: ${{ steps.sonar_result.outputs.result }}
-          output: |
-            {
-              "summary": "Sonarqube code quality scan's result is ${{ steps.sonar_result.outputs.result }}",
-              "text_description": "For more details visit this [link](${{ env.SONARQUBE_PUBLIC_URL }}/dashboard?id=${{ env.serviceName }})"
-            }
+#     - name: Run sonar scanner and push result to LNI's Sonarqube
+#       continue-on-error: true
+#       env:
+#           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+#       run: |
+#           sonar-scanner -Dsonar.login="${{ secrets.SONAR_TOKEN }}" \
+#             -Dsonar.host.url="${{ env.SONARQUBE_URL }}" \
+#             -Dsonar.projectKey="${{ needs.prepare.outputs.serviceName }}" \
+#             -Dsonar.projectVersion="${{ needs.prepare.outputs.serviceVersion }}" \
+#             -Dsonar.java.binaries=target/test-classes/**/* \
+#             -Dsonar.language=java \
+#             -Dsonar.qualitygate.wait=true \
+#             -Dsonar.exclusions="*.js, src/test/bdd/**, grpc-client/**"
+#  #           -Dsonar.coverage.exclusions="src/test/**/*" \
+#     - name: Getting sonar quality gate result for the project
+#       id: sonar_json_result
+#       shell: bash
+#       run: |
+#           projectStatusJson=$(curl -u ${{ secrets.SONAR_TOKEN }}: "${{ env.SONARQUBE_URL }}/api/qualitygates/project_status?projectKey=${{ env.serviceName }}")
+#           echo $projectStatusJson
+#           echo "::set-output name=result::$projectStatusJson"
+#     - name: Parsing sonarqube result
+#       id: sonar_result
+#       shell: bash
+#       run: |
+#           echo ${{ steps.sonar_json_result.outputs.result }}
+#           echo ${{ fromJSON(steps.sonar_json_result.outputs.result) }}
+#           projectStatus=${{ fromJSON(steps.sonar_json_result.outputs.result).projectStatus.status }}
+#           if [[ $projectStatus =~ "ERROR" ]]; then
+#             sonarResult="failure"
+#           else
+#             sonarResult="success"
+#           fi
+#           echo "::set-output name=result::$sonarResult"
+#     - name: Add check action for sonarqube result
+#       uses: LouisBrunner/checks-action@v1.1.1
+#       with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           name: "[sonarqube] Code quality result"
+#           conclusion: ${{ steps.sonar_result.outputs.result }}
+#           output: |
+#             {
+#               "summary": "Sonarqube code quality scan's result is ${{ steps.sonar_result.outputs.result }}",
+#               "text_description": "For more details visit this [link](${{ env.SONARQUBE_PUBLIC_URL }}/dashboard?id=${{ env.serviceName }})"
+#             }
 
 
 
