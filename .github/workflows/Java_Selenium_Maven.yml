@@ -15,11 +15,11 @@ on:
 env:
   UNIT_TESTS_REPORT_FILENAME: "jacoco-reports-${{ github.run_id }}"
   REQUIRED_CODE_COVERAGE_PERCENT: 80
-  ONARQUBE_URL: http://vdiokcqa03wxv:9000
+  SONARQUBE_URL: "http://vdiokcqa03wxv.risk.regn.net:9000"
   SONARQUBE_PUBLIC_URL: http://vdiokcqa03wxv:9000
   serviceName: $(xmllint --xpath '/*[local-name()="project"]/*[local-name()="artifactId"]/text()' pom.xml)
 #   10.248.227.69 VDI3 ip
-  SONARQUBE_URL: http://vdiokcqa03wxv:9000
+#   SONARQUBE_URL: "http://vdiokcqa03wxv.risk.regn.net:9000"
 #   SONARQUBE_PUBLIC_URL: https://sonar.us-mvr-dev.azure.lnrsg.io
   
 #   SONAR_SCANNER_VERSION: 4.6.1.2450
