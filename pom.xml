@@ -8,7 +8,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<jacoco.version>0.8.7</jacoco.version>
+		<jacoco.version>0.8.11</jacoco.version>
 		<sonar.version>3.9.0.2155</sonar.version>
 	</properties>
 
